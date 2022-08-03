@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TREM facilitado</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animatedBg3.css">
+        <!--[if !IE]><!-->
+        <style>
+        .material {
+            border:1px solid rgb(0, 132, 255);
+            -moz-border-radius:8px;
+            -webkit-border-radius:8px;	
+            border-radius:8px;	
+        }
+        </style>
+        <!--<![endif]-->
+</head>
+
+<body >
+    
+    <nav class="navbar navbar-white fixed-top bg-warning" >
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Termo de Exame e Recebimento de Material - TREM</span>
+        </div>
+        <small class="ps-2 mt-0 text-black">Modelo online facilitado</small>
+    </nav>
+    <div class="container justify-content-center flex-nowrap">
+        <div class="row p-5 mt-5">
+            <div class="col">
+                <h1 class="text-center">Entre com as informações abaixo</h1>
+                <center><small>O formulário irá gerar um PDF automaticamente</small></center>
+            </div>
+        </div>
+        <form class=" justify-content-center row g-3 p-2 " action="generated/printtrem.php" method="post" novalidate>
+            <div class="row">
+                <h2>1. IDENTIFICAÇÃO DOS MILITARES</h2>
+                <div class="col-md-8 mb-3">
+                    <label for="inputNomeacao" class="form-label">Qual o numero do boletim interno que nomeou o responsável?</label>
+                    <input type="input" class="form-control" id="inputNomeacao" name="inputNomeacao" aria-describedby="nomeacaoHelp"
+                        required>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Coloque o número!</div>
+                    <div id="nomeacaoHelp" class="form-text">Não precisa colocar nada além do numero do boletim</div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="inputDataNomeacao" class="form-label">Data da publicação</label>
+                    <input type="input" class="form-control" id="inputDataNomeacao" name="inputDataNomeacao" aria-describedby="nomeacaoHelp"required>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Coloque o número!</div>
+                    <div id="nomeacaoDataHelp" class="form-text">Ex.: 10/05/2020</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 mb-3">
+                    <label for="inputNome" class="form-label">Qual o nome completo do presidente do TREM?</label>
+                    <input type="text" class="form-control" id="inputNome" name="inputNome"  aria-describedby="nomeHelp" required>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Coloque seu nome completo</div>
+                    <div id="nomeacaoHelp" class="form-text">Ex.: Luiz Fernando da Mota Carvalho</div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <label for="inputNome" class="form-label">Posto e graduação</label>
+                    <select class="form-select" name="inputNomePosto" required aria-label="selectDependencia">
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Maj">Major</option>
+                        <option value="Cap">Capitão</option>
+                        <option value="1º Ten">1º Tenente</option>
+                        <option value="2º Ten">2º Tenente</option>
+                        <option value="Asp">Aspirante</option>
+                    </select>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Escolha!</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 mb-3">
+                    <label for="inputNome2" class="form-label">Qual o nome completo do 1º MEMBRO?</label>
+                    <input type="text" class="form-control" id="inputNome2" name="inputNome2"  aria-describedby="nomeHelp" required>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Coloque seu nome completo</div>
+                    <div id="nomeacaoHelp" class="form-text">Ex.: Luiz Fernando da Mota Carvalho</div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <label for="inputNome" class="form-label">Posto e graduação</label>
+                    <select class="form-select" name="inputNomePosto2" required aria-label="selectDependencia">
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Maj">Major</option>
+                        <option value="Cap">Capitão</option>
+                        <option value="1º Ten">1º Tenente</option>
+                        <option value="2º Ten">2º Tenente</option>
+                        <option value="Asp">Aspirante</option>
+                        <option value="S Ten">Subtenente</option>
+                        <option value="1º Sgt">1º Sargento</option>
+                        <option value="2º Sgt">2º Sargento</option>
+                        <option value="3º Sgt">3º Sargento</option>
+                    </select>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Escolha!</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 mb-3">
+                    <label for="inputNome" class="form-label">Qual o nome completo do 2º MEMBRO?</label>
+                    <input type="text" class="form-control" id="inputNome3" name="inputNome3"  aria-describedby="nomeHelp" required>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Coloque seu nome completo</div>
+                    <div id="nomeacaoHelp" class="form-text">Ex.: Luiz Fernando da Mota Carvalho</div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <label for="inputNome" class="form-label">Posto e graduação</label>
+                    <select class="form-select" name="inputNomePosto3" required aria-label="selectDependencia">
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Maj">Major</option>
+                        <option value="Cap">Capitão</option>
+                        <option value="1º Ten">1º Tenente</option>
+                        <option value="2º Ten">2º Tenente</option>
+                        <option value="Asp">Aspirante</option>
+                        <option value="S Ten">Subtenente</option>
+                        <option value="1º Sgt">1º Sargento</option>
+                        <option value="2º Sgt">2º Sargento</option>
+                        <option value="3º Sgt">3º Sargento</option>
+                    </select>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Escolha!</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="mt-5">2. IDENTIFICAÇÃO DO MATERIAL</h2>
+                </div>
+
+            </div>
+            <span class="alert alert-info "><img src="assets/img/caverna.PNG" width="100" alt="" style="display: flex;">
+                <b>ORIENTAÇÃO</b><br>Adicionar os materiais que serão avaliados e recebidos. A quantidade está na nota de BI que nomeou a comissão.<br>
+                Adicione tantos quantos necessários;<br>
+                Um TREM bem feito contém o máximo de informações possíveis para identificar o material.<br><br>
+                <b>EXEMPLO:</b><br>
+                Descrição do material;<br>
+                Ano modelo/Fabricação;<br>
+                Cor;<br>
+                Nr de serie;<br>
+                Chassi (apenas veículos)<br>
+                Potência (KVa/HP/CV) (apenas veículos e equipamentos);<br>
+                ID Sigelog (Se for material fornecido pelo OP).<br><br>
+                Esta orientação não abrange todo escopo de possibilidades. Lembre-se: Cada caso deve ser avaliado individualmente.<br>
+
+                    <a class='btn btn-success mt-5  'type="button" name="btnAddMaterial" id="btnAddMaterial" onclick="addMaterial()">(+) Adicionar material</a>
+                    <input type="hidden" name="qtdMaterial" id="qtdMaterial">
+            </span>
+
+                <div id="materiais">
+                   
+                </div>
+            <div class="row">
+                <h2 class="mt-5">3. PROCEDÊNCIA DO MATERIAL</h2>
+
+            </div>
+            <div class="row">
+                <div class="col-md-8 mb-2">
+                    <label for="inputFornecedor" class="form-label">Fornecedor </label>
+                    <input type="text" class="form-control" id="inputFornecedor"name="inputFornecedor" aria-describedby="fornecedorHelp" required>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Não tem como prosseguir sem ao menos ter uma descrição</div>
+                    <div id="fornecedorHelp" class="form-text">Fornecedor civil ou nome da OM que forneceu o material</div>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <label for="inputCNPJ" class="form-label">CNPJ </label>
+                    <input type="text" class="form-control" id="inputCNPJ"name="inputCNPJ" aria-describedby="inputCNPJ">
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Não tem como prosseguir sem ao menos ter uma descrição</div>
+                    <div id="inputCNPJ" class="form-text">Se for OM ou OP pode deixar em branco</div>
+                </div>
+
+                
+
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="inputContrato" class="form-label">Contrato</label>
+                    <input type="text" class="form-control" id="inputContrato"name="inputContrato" aria-describedby="inputContrato" >
+                    <div id="inputContrato" class="form-text">Colocar o numero e ano do contrato de fornecimento, se for o caso.</div>
+                </div>
+                <div class="col-md-3">
+                    <label for="inputNrDoc" class="form-label">Nr da Nota Fiscal ou Guia (Forn/Trnsf)</label>
+                    <input type="text" class="form-control" id="inputNrDoc"name="inputNrDoc" aria-describedby="inputNrDoc" >
+                    <div id="inputNrDoc" class="form-text">Colocar conforme documento. Cada empresa tem um padrão próprio.<br>As Guias do exercito tem por padrão: Nr/AAAA (12/2022)</div>
+                </div>
+                <div class="col-md-3">
+                    <label for="inputNE" class="form-label">Nr da Nota de Empenho</label>
+                    <input type="text" class="form-control" id="inputNE"name="inputNE" aria-describedby="inputNE" >
+                    <div id="inputNE" class="form-text">Se for fornecido, deixe branco.</div>
+                </div>
+                <div class="col-md-3 mb-2">
+                    <label for="inputDataFornecimento" class="form-label">Data do documento de entrada</label>
+                    <input type="text" class="form-control" id="inputDataFornecimento"name="inputDataFornecimento" aria-describedby="inputDataFornecimento" required>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Não tem como prosseguir sem ao menos ter uma descrição</div>
+                    <div id="inputDataFornecimento" class="form-text">Ex.: 12/02/2022</div>
+                </div>
+                
+            </div>
+            <hr>
+            <div class="row">
+                <h2 class="mt-5">4. ALTERAÇÕES </h2>
+                <span class="alert alert-info "><img src="assets/img/caverna.PNG" width="100" alt="" style="display: flex;"><b>ORIENTAÇÃO</b><br>Estado de Conservação - Citar as avarias e/ou faltas quantitativas, inclusive indícios de violação na embalagem<br>Condições de funcionamento - Citar os defeitos constatados durante os testes, no recebimento do material</span>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <label for="textEstadoGeral" class="form-label">Estado de Conservação </label>
+                    <textarea class="form-control" id="textEstadoGeral"name="textEstadoGeral" aria-describedby="textEstadoGeral" rows="4" cols="50" required></textarea>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Não tem como prosseguir sem ao menos ter uma descrição</div>
+                    <div id="textEstadoGeral" class="form-text">Citar as avarias e/ou faltas quantitativas, inclusive indícios de violação na embalagem;<br>Ou indicar: "O estado de conservação é perfeito, os quantitativos estão corretos e sem avarias."</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <label for="textCondicoes" class="form-label">Condições de funcionamento</label>
+                    <textarea class="form-control" id="textCondicoes"name="textCondicoes" aria-describedby="textCondicoes" rows="4" cols="50" required></textarea>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Não tem como prosseguir sem ao menos ter uma descrição</div>
+                    <div id="textCondicoes" class="form-text">Citar os defeitos constatados durante os testes, no recebimento do material;<br>Ou indicar: "O material encontra-se em perfeito estado de uso."</div>
+                </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <h2 class="mt-5">5. CONCLUSÃO</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="selectFavoravel" class="form-label">A comissão é favoravel ao recebimento do material?</label>
+                    <select name="selectFavoravel" id="selectFavoravel" class="form-select" required>
+                        <option value="" selected disabled>Selecione...</option>
+                        <option value="sim">Sim</option>
+                        <option value="nao">Não</option>
+                    </select>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Tem que informar se deve receber ou não o material</div>
+                    <div id="inclusaoDataHelp" class="form-text">Sim - Chegamos a conclusão que deve entrar em carga <br>Não - Chegamos a conclusão de que o recebimento é inviável</div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Gerar documento</button>
+        </form>
+        <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+        </div>
+    </div >
+    
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/vanilla-masker.min.js"></script>
+    <script>
+        (() => {
+            'use strict'
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+           
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+            VMasker(document.getElementById("inputDataNomeacao")).maskPattern("99/99/9999");
+            VMasker(document.getElementById("inputDataFornecimento")).maskPattern("99/99/9999");
+            VMasker(document.getElementById("inputContrato")).maskPattern("99/9999");
+            VMasker(document.getElementById("inputCNPJ")).maskPattern("99.999.999/9999-99");
+        })()
+        
+        const remover = document.getElementById("removeMotivoBtn")
+        const input = document.createElement('textarea')
+        let size=0;
+        var sizeMaterial = 0;
+
+        function addMaterial(){
+            var e = document.getElementById('materiais')
+            sizeMaterial +=1;
+                e.insertAdjacentHTML('beforeend',`<fieldset class="material mb-2 px-3"><legend>Material `+sizeMaterial+`</legend><div class="row">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-3">
+                            <label for="inputDescricao" class="form-label">Descrição do material (da NF/Guia/Empenho)</label>
+                            <textarea rows='5' class="form-control" id="inputDescricao`+sizeMaterial+`" name="inputDescricao`+sizeMaterial+`" aria-describedby="DescricaoHelp"
+                                required></textarea>
+                            <div class="valid-feedback">Tudo certo.</div>
+                            <div class="invalid-feedback">Coloque a descrição</div>
+                            <div id="DescricaoHelp" class="form-text">Transcrever da Guia ou NF/NE as descrições do material, além de verificar fisicamente as propriedades.</div>
+                            <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkAcompanhamento`+sizeMaterial+`" onchange="addAcompanhamentos()">
+                            <label class="form-check-label" for="checkAcompanhamento">
+                                Este material possui acompanhamentos
+                            </label>
+                            <input type="hidden" name="flagAcompanhamento" id="flagAcompanhamento">
+                        </div>
+                    </div>
+
+                    <div class="row" id="acompanhamento" style="display:none;">
+                        <div class="col-md-12 mb-3">
+                            <label for="inputAcompanhamento" class="form-label">Acompanha este material os seguintes itens (1 por linha)</label>
+                            <textarea rows='5' class="form-control" id="inputAcompanhamento`+sizeMaterial+`" name="inputAcompanhamento`+sizeMaterial+`" aria-describedby="DescricaoHelp"></textarea>
+                            <div class="valid-feedback">Tudo certo.</div>
+                            <div class="invalid-feedback">Coloque a descrição</div>
+                            <div id="DescricaoHelp" class="form-text">Ex.: 01 Chave de roda; 01 Manual de instruções....</div>
+                            <div class="form-check">
+                        </div>
+                    </div>
+                    </fieldset>`)
+                    document.getElementById("qtdMaterial").value = sizeMaterial;
+     
+        }
+
+        function addAcompanhamentos(){
+            var e = document.getElementById('acompanhamento')
+
+            if(e.style.display === 'none') {
+                e.style.display = 'block'
+                document.getElementById('flagAcompanhamento').value ='ok'
+                document.getElementById("qtdMaterial").value = sizeMaterial;
+            } else {
+                e.style.display = 'none'
+            }
+        }
+    </script>
+    
+
+</body>
+
+<footer class=" text-center text-white" style="background-color:#09f;"><!-- footer-->
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        
+      </section>
+      <section class="mb-4">
+        <p>
+          9º BEC - Av. Fernando Corrêa da Costa, 2979 - Boa Esperança<br>Cuiabá-MT - CEP: 78070-000<br> Tel. (65) 2121-0355 ou (65) 2121-0354 | Email: <a class="email text-white" href="mailto:clubesargentoscuiaba@gmail.com" target="_self">s1@9bec.eb.mil.br</a>
+        </p>
+      </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2022 | Autor: Luiz Fernando da Mota Carvalho - 3º Sgt 
+    </div>
+</footer>
+</html>

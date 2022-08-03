@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DIEx de descarga Direta</title>
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="css/animatedBg.css">
+    </head>
+    <style>
+         .material {
+            border:1px solid rgb(0, 51, 128);
+            -moz-border-radius:8px;
+            -webkit-border-radius:8px;	
+            border-radius:8px;	
+        }
+    </style>
+<body>
+    <nav class="navbar navbar-dark bg-success" >
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">DIEx de descarga - DIRETA</span>
+        </div>
+        <small class="ps-2 mt-0 text-white">Para aqueles materiais não controlados e até R$ 5.000,00</small>
+    </nav>
+
+    <div class="container justify-content-center flex-nowrap">
+        <div class="row p-5">
+            <div class="col">
+                <h1 class="text-center">Entre com as informações abaixo</h1>
+                <center><small>O formulário irá gerar um PDF automaticamente</small></center>
+            </div>
+        </div>
+        <form class=" justify-content-center row g-3 p-2 needs-validation" action="generated/diexEletronico.php" method="post" novalidate>
+            <div class="row">
+                <h2>1. IDENTIFICAÇÃO DO DOCUMENTO E DO DETENTOR</h2>
+                <div class="col-md-4 mb-3">
+                    <label for="inputDetentor" class="form-label">Quem é o detentor do material? Nome completo</label>
+                    <input type="input" class="form-control" id="inputDetentor" name="inputDetentor" aria-describedby="detentorHelp" required>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Informar nome completo</div>
+                    <div id="detentorHelp" class="form-text"></div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <label for="inputDetentorPG" class="form-label">Posto/Graduação</label>
+                    <select class="form-select" name="inputDetentorPG" required aria-label="inputDetentorPG">
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Maj">Major</option>
+                        <option value="Cap">Capitão</option>
+                        <option value="1º Ten">1º Tenente</option>
+                        <option value="2º Ten">2º Tenente</option>
+                        <option value="Asp">Aspirante</option>
+                        <option value="S Ten">Subtenente</option>
+                        <option value="1º Sgt">1º Sargento</option>
+                        <option value="2º Sgt">2º Sargento</option>
+                        <option value="3º Sgt">3º Sargento</option>
+                    </select>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Informar nome completo</div>
+                    <div id="inputDetentorPG" class="form-text">Escolha</div>
+                </div>
+
+                <div class="col-md-2 mb-3">
+                    <label for="inputSecao" class="form-label">Seção/Depósito</label>
+                    <select class="form-select" name="inputSecao" required aria-label="inputSecao">
+                        <option value="" disabled selected>Selecione...</option>
+                        <optgroup label="Estado Maior">
+                            <option value="COMANDO">Comando</option>
+                            <option value="SUBCOMANDO">Sub Comando</option>
+                            <option value="Adj Cmdo">Adj Comando</option>
+                        </optgroup>
+                        <optgroup label="Div Adm">
+                            <option value="Fisc Adm">Fiscalização Adm</option>
+                            <option value="SALC">SALC</option>
+                            <option value="Financeiro">Tesouraria</option>
+                            <option value="Conformidade">Conformidade</option>
+                            <option value="Set Material">Almoxarifado/Seção</option>
+                            <option value="Aprov">Aprovisionamento/Seção</option>
+                        </optgroup>
+                        <optgroup label="Div Pes">
+                            <option value="S1">S1</option>
+                            <option value="S1 - Arquivo">S1 - Arquivo</option>
+                            <option value="S1 - Justiça">S1 - Justiça</option>
+                            <option value="SPP">SPP</option>
+                            <option value="SPC">SPC</option>
+                            <option value="Set Material">Almoxarifado/Seção</option>
+                            <option value="Seç Saúde">Seção de Saúde</option>
+                        </optgroup>
+                        <optgroup label="CCAp">
+                            <option value="S2">S2</option>
+                            <option value="S3">S3</option>
+                            <option value="S4">S4</option>
+                            <option value="S5">S5</option>
+                            <option value="Seç Téc">Seção Técnica</option>
+                            <option value="Seç Info">Informática</option>
+                            <option value="PO">Pelotão de Obras</option>
+                            <option value="Enc Mat CCAP">Subtenência CCAp</option>
+                        </optgroup>
+                        <optgroup label="CEEM">
+                            <option value="Enc Mat Cia E Eqp Mnt">Subtenência CEEM</option>
+                        </optgroup>
+                        <optgroup label="1ª Cia E Cnst">
+                            <option value="Enc Mat 1ª Cia E Cnst">Subtenência 1ª Cia E Cnst</option>
+                        </optgroup>
+                        <optgroup label="2ª Cia E Cnst">
+                            <option value="Enc Mat 2ª Cia E Cnst">Subtenência 2ª Cia E Cnst</option>
+                        </optgroup>
+                        
+                    </select>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Informar nome completo</div>
+                    <div id="inputSecao" class="form-text">Escolha</div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="inputNup" class="form-label">Número do DIEx. Somente os números</label>
+                    <input type="input" class="form-control" id="inputNup" name="inputNup" aria-describedby="inputNup"required>
+                    <div class="valid-feedback">Tudo certo.</div>
+                    <div class="invalid-feedback">Coloque o número!</div>
+                    <div id="inputNup" class="form-text">Isso é controle interno da seção.</div>
+                </div>
+            </div>
+
+            
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <h2 class="mt-5">2. IDENTIFICAÇÃO DO(S) MATERIAL(AIS)</h2>
+                </div>
+                <div class="col-md-4">
+                    <a class='btn btn-success mt-5'type="button" name="btnAddMaterial" id="btnAddMaterial" onclick="addMaterial()">(+) Adicionar material</a>
+                </div>
+                <span class="alert alert-info d-block"><img src="assets/img/caverna.PNG" width="100" alt="" style="display: flex;"><b>ORIENTAÇÃO</b><br>Copie a descrição do material do SISCOFIS<br></span>
+            </div>
+            <input type="hidden" name="qtdMaterial" id="qtdMaterial">
+
+            <div id="materiais">
+                   <!---->
+                
+            </div>
+
+           
+            <button type="submit" class="btn btn-primary">Gerar documento</button>
+        </form>
+    </div>
+    <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/vanilla-masker.min.js"></script>
+    <script>
+        let size=0;
+        var sizeMaterial = 0;
+
+        function addMaterial() {
+            var e = document.getElementById('materiais')
+            sizeMaterial +=1
+                e.insertAdjacentHTML('beforeend',
+                `<fieldset class="material px-3 mb-2">
+                    <legend>Material `+sizeMaterial+`
+                        <div class="form-check form-switch" style="display:inline-block;" id="intervaloBox" >
+                            <input class="form-check-input" onclick = intervalo(); type="checkbox" id="intervalo`+sizeMaterial+`" name="intervalo`+sizeMaterial+`" ">
+                            <label class="form-check-label" for="intervalo">Vou descarregar mais de 1 item nesta ficha</label>
+                        </div>
+                    </legend>
+                    <div class="row">
+                        <div class="col-md-1 mb-3">
+                            <label for="inputFicha">Ficha</label>
+                            <input type="text" class="form-control" id="inputFicha`+sizeMaterial+`" name="inputFicha`+sizeMaterial+`" aria-describedby="patrimonioHelp" required>
+                            <div class="valid-feedback">Tudo certo.</div>
+                            <div class="invalid-feedback">Coloque o numero aqui!</div>
+                            <div id="patrimonioHelp" class="form-text">igual no SISCOFIS</div>
+                        </div>
+                        <div class="col-md-2 mb-3" id="patUnico`+sizeMaterial+`">
+                            <label for="inputPatrimonio" class="form-label">Patrimônio (SISCOFIS)</label>
+                            <input type="input" class="form-control" id="inputPatrimonio`+sizeMaterial+`" name="inputPatrimonio`+sizeMaterial+`" aria-describedby="patrimonioHelp"required>
+                            <div class="valid-feedback">Tudo certo.</div>
+                            <div class="invalid-feedback">Coloque o numero aqui!</div>
+                            <div id="patrimonioHelp" class="form-text">Somente os cinco números finais. Ex.: 00317</div>
+                        </div>
+
+                            <div class="col-md-1 mb-3" id="patInicial`+sizeMaterial+`" style="display: none;">
+                                <label for="inputPatrimonioInicial" class="form-label">Intervalo Inicial</label>
+                                <input type="input" class="form-control" id="inputPatrimonioIncial`+sizeMaterial+`" name="inputPatrimonioInicial`+sizeMaterial+`" aria-describedby="patrimonioHelp"required>
+                                <div class="valid-feedback">Tudo certo.</div>
+                                <div class="invalid-feedback">Coloque o numero aqui!</div>
+                                <div id="patrimonioHelp" class="form-text">Ex.: 00317</div>
+                            </div>
+                            <div class="col-md-1 mb-3" id="patFinal`+sizeMaterial+`" style="display: none;">
+                                <label for="inputPatrimonioFinal" class="form-label">Intervalo Final</label>
+                                <input type="input" class="form-control" id="inputPatrimonioFinal`+sizeMaterial+`" name="inputPatrimonioFinal`+sizeMaterial+`" aria-describedby="patrimonioHelp"required>
+                                <div class="valid-feedback">Tudo certo.</div>
+                                <div class="invalid-feedback">Coloque o numero aqui!</div>
+                                <div id="patrimonioHelp" class="form-text">Ex.: 00328</div>
+                                <input type="hidden" name="intervaloCheck`+sizeMaterial+`" id="intervaloCheck`+sizeMaterial+`">
+                            </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="inputDescricao" class="form-label">Descrição (SISCOFIS)</label>
+                            <input type="text" class="form-control" id="inputDescricao`+sizeMaterial+`" name="inputDescricao`+sizeMaterial+`" aria-describedby="DescricaoHelp"required>
+                            <div class="valid-feedback">Tudo certo.</div>
+                            <div class="invalid-feedback">Coloque a descrição</div>
+                            <div id="DescricaoHelp" class="form-text">Copie do SISCOFIS.</div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="inputInclusaoValor" class="form-label">Valor LÍQUIDO CONTÁBIL (SISCOFIS)</label>
+                            <input type="text" class="form-control" id="inputInclusaoValor`+sizeMaterial+`" name="inputInclusaoValor`+sizeMaterial+`"
+                                aria-describedby="inputInclusaoValor" required>
+                            <div class="valid-feedback">Tudo certo.</div>
+                            <div class="invalid-feedback">Coloque o valor do material</div>
+                            <div id="inclusaoValorHelp" class="form-text">Copie do SISCOFIS o valor DEPRECIADO.</div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <label for="inputInclusaoData" class="form-label">Inclusão na carga</label>
+                            <input type="input" class="form-control" id="inputInclusaoData`+sizeMaterial+`" name="inputInclusaoData`+sizeMaterial+`" aria-describedby="inputInclusaoData"
+                                required>
+                            <div class="valid-feedback">Tudo certo.</div>
+                            <div class="invalid-feedback">Coloque o valor do material</div>
+                            <div id="inclusaoDataHelp" class="form-text">Está no SISCOFIS.</div>
+                        </div>
+                     </div>
+                </fieldset>`)
+                    document.getElementById("qtdMaterial").value = sizeMaterial
+
+                    VMasker(document.getElementById("inputInclusaoValor"+sizeMaterial)).maskMoney()
+                    VMasker(document.getElementById("inputPatrimonio"+sizeMaterial)).maskPattern("99999")
+                    VMasker(document.getElementById("inputInclusaoData"+sizeMaterial)).maskPattern("99/99/9999")
+                    
+        }
+
+        function intervalo() {
+            let intervalo = document.getElementById("intervalo"+sizeMaterial)
+
+            console.log(intervalo.id)
+
+            if (intervalo.checked){
+                document.getElementById("patUnico"+sizeMaterial).style.display ='none'
+                document.getElementById("patInicial"+sizeMaterial).style.display ='inline-block'
+                document.getElementById("patFinal"+sizeMaterial).style.display ='inline-block'
+                intervalo.setAttribute('disabled','')
+                document.getElementById("intervaloCheck"+sizeMaterial).value = 1
+            } else {
+                document.getElementById("patUnico"+sizeMaterial).style.display ='inline-block'
+                document.getElementById("patInicial"+sizeMaterial).style.display ='none'
+                document.getElementById("patFinal"+sizeMaterial).style.display ='none'
+            }
+        }
+
+
+
+    </script>
+</body>
+    <footer class=" text-center text-white" style="background-color:#09f;"><!-- footer-->
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            
+          </section>
+          <section class="mb-4">
+            <p>
+              9º BEC - Av. Fernando Corrêa da Costa, 2979 - Boa Esperança<br>Cuiabá-MT - CEP: 78070-000<br> Tel. (65) 2121-0355 ou (65) 2121-0354 | Email: <a class="email text-white" href="mailto:clubesargentoscuiaba@gmail.com" target="_self">s1@9bec.eb.mil.br</a>
+            </p>
+          </section>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+          © 2022 | Autor: Luiz Fernando da Mota Carvalho - 3º Sgt 
+        </div>
+    </footer>
+
+</html>

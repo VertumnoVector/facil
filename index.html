@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de opções</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background:rgb(0, 0, 170) ;">
+        <div class="container-fluid mb-2">
+            <a class="navbar-brand abs" href="#">Fiscalização administrativa</a>
+            <small class=" pt-3 text-white abs"><br>Burocracia descomplicada</small>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="collapseNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://10.56.160.77">Intranet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://10.56.160.10">SISBOL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://10.56.160.128/" data-bs-toggle="collapse">SPED</a>
+                    </li>
+                </ul>     
+            </div>
+        </div>
+    </nav>
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="container p-3 mt-5" style="background:rgb(255, 255, 255) ;border-radius: 8px;"> 
+            <h3 class="display-6">Opções</h3>
+            <div class="tab overflow-auto">
+                <button class="btn btn-primary tablinks mb-2 mt-1" onclick="openMenu(event, 'PT')" ><span class="material-icons">engineering</span>Parecer Técnico</button>
+                <button class="btn btn-success tablinks mb-2" onclick="openMenu(event, 'TEAM')"><span class="material-icons">assignment_turned_in</span>TEAM</button>
+                <button class="btn btn-warning tablinks mb-2" onclick="openMenu(event, 'TREM')"><span class="material-icons">description</span>TREM</button>
+                <button class="btn btn-danger tablinks mb-2" onclick="openMenu(event, 'PA')"><span class="material-icons">crisis_alert</span>Processo Adm.</button>
+                <button class="btn btn-info tablinks mb-2" onclick="openMenu(event, 'DIEX')"><span class="material-icons">delete</span>DIEx de Descarga</button>
+                <button class="btn btn-secondary tablinks" onclick="openMenu(event, 'PA')" disabled><span class="material-icons">attach_money</span>Partes de opção</button>             
+                <input type="hidden" id="defaultOpen" onclick="openMenu(event, 'Default')">
+              </div>         
+              <div id="PT" class="tabcontent overflow-auto">
+                <h3 class="text-left display-4">Parecer Técnico</h3>
+                <p class="text-left">Procedimento administrativo para checar as condições atuais do material.<br>Deve ser elaborado por um militar perito da classe do material.</p>
+                <p class="text-left">INSTRUÇÕES COMPLEMENTARES<br>"...a. Na falta absoluta de oficiais habilitados na guarnição, deve ser designado um Oficial com
+                    assessoramento técnico de um graduado habilitado no respectivo MEM.<br>b. Caso a UA não possua também graduado habilitado, solicitará ao escalão superior designação
+                    de um oficial ou graduado habilitado, justificando o motivo.<br>3. Quando o encarregado do PT concluir pela descarga do material, o Parecer Técnico dará origem
+                    a um TEAM e poderá dar origem a uma sindicância ou IT..."</p><hr>
+                <div class="row text-center ">
+                    <div class="col">
+                        <a class="btn btn-primary"href="http://www.sef.eb.mil.br/images/a2/assessoria2/2021/port_1555_cex_rae.pdf" target="_blank" style="width: 120px;"><span class="material-icons horizontal">picture_as_pdf</span>RAE</a>
+                        <a class="btn btn-primary"href="http://www.1rm.eb.mil.br/images/imagens/documentos/EscLog/narmnt.pdf" target="_blank"><i class="material-icons horizontal">picture_as_pdf</i>NARMNT</a>
+                        <a class="btn btn-primary"href="http://www.dme.eb.mil.br/index.php/legislacao-afins" target="_blank"><i class="material-icons horizontal">picture_as_pdf</i>NARMENG</a>
+                        <a class="btn btn-success"href="/facil/pt.html"><i class="material-icons horizontal">open_in_new</i>Preencher on-line</a>
+                    </div>
+                </div>            
+              </div>       
+              <div id="TEAM" class="tabcontent overflow-auto">
+                <h3 class="text-left display-4">TEAM</h3>
+                <p class="text-left">Termo de Exame e Averiguação de Material<br>A comissão irá avaliar o material para ser examinado possui condições de uso e ou reparo.</p>
+                <p class="text-left">INSTRUÇÕES COMPLEMENTARES<br>"...1. Considerar o material recuperável quando:<br>
+                    a. o custo de manutenção não ultrapassar o percentual de 60% do valor do
+                    material novo;<br>
+                    b. o custo de manutenção for inferior ao seu valor real como material usado:<br>
+                    c. a taxa de amortização ainda permitir a produção de serviços a preço de
+                    mercado; e<br>
+                    d. o material não tiver atingido a obsolescência. <br>
+                    2. Considerar a recuperação antieconômica quando: <br>
+                    a. não atender às condições citadas em l.a., l.b. ou l.c. acima; <br>
+                    b. as peças de reposição tiverem saído da linha de produção, mediante
+                    comprovação do fornecedor. <br>
+                    3. Os membros da comissão de exame devem ser criteriosamente escolhidos
+                    e seus integrantes devem possuir experiência e conhecimento técnico. <br>
+                    4. Para o caso da opção pela descarga e posterior alienação, indicar a
+                    conveniência da desmontagem do equipamento para o aproveitamento de peças (2ª
+                    classe). <br>
+                    5. O item 3 (Exame do Material) e o inciso 3), letra a.do item 4 (custos de
+                    recuperação) devem ser elaborados com base em Parecer Técnico. <br>
+                </p><hr>
+                <div class="row text-center ">
+                    <div class="col mb-2">
+                        <a class="btn btn-primary"href="http://www.sef.eb.mil.br/images/a2/assessoria2/2021/port_1555_cex_rae.pdf" target="_blank" style="width: 120px;"><span class="material-icons horizontal">picture_as_pdf</span>RAE</a>
+                        <a class="btn btn-primary"href="http://www.1rm.eb.mil.br/images/imagens/documentos/EscLog/narmnt.pdf" target="_blank"><i class="material-icons horizontal">picture_as_pdf</i>NARMNT</a>
+                        <a class="btn btn-primary"href="http://www.dme.eb.mil.br/index.php/legislacao-afins" target="_blank"><i class="material-icons horizontal">picture_as_pdf</i>NARMENG</a>
+                        <a class="btn btn-success"href="/facil/team.html"><i class="material-icons horizontal">open_in_new</i>Preencher on-line</a>
+                    </div>
+                </div>
+              </div>          
+              <div id="TREM" class="tabcontent overflow-auto">
+                <h3 class="text-left display-4">TREM</h3>
+                <p class="text-left">Termo de Exame e Averiguação de Material<br>A comissão irá avaliar se o material pode ser recebido ou não.</p>
+                <hr>
+                <div class="row text-center ">
+                    <div class="col mb-2">
+                        <a class="btn btn-primary"href="http://www.sef.eb.mil.br/images/a2/assessoria2/2021/port_1555_cex_rae.pdf" target="_blank" style="width: 120px;"><span class="material-icons horizontal">picture_as_pdf</span>RAE</a>
+                        <a class="btn btn-primary"href="http://www.1rm.eb.mil.br/images/imagens/documentos/EscLog/narmnt.pdf" target="_blank"><i class="material-icons horizontal">picture_as_pdf</i>NARMNT</a>
+                        <a class="btn btn-primary"href="http://www.dme.eb.mil.br/index.php/legislacao-afins" target="_blank"><i class="material-icons horizontal">picture_as_pdf</i>NARMENG</a>
+                        <a class="btn btn-success"href="/facil/trem.html"><i class="material-icons horizontal">open_in_new</i>Preencher on-line</a>
+                    </div>
+                </div>
+              </div>
+              <div id="DIEX" class="tabcontent overflow-auto">
+                <h3 class="text-left display-4">DIEx de descarga</h3>
+                <p class="text-left">Descarga de material<br>Escolha a categoria correta para o material ou conjunto que deseja descarregar</p>
+                <div class="row text-center ">
+                    <div class="col-4 mb-2">
+                        <div class="card" style="width: 14rem;">
+                            <span class="material-icons horizontal" style="color:#09f; font-size: 48px;">delete</span>
+                            <div class="card-body">
+                              <h5 class="card-title">Descarga Direta</h5>
+                              <p class="card-text">Não controlado. Até R$ 5.000,00</p>
+                              <small class="card-text">Móveis e utensilios</small>
+                              <a class="btn btn-primary"href="/facil/diexDescargaDireta.html"><span class="material-icons horizontal">open_in_new</span>Preencher</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 mb-2">
+                        <div class="card" style="width: 14rem;">
+                            <span class="material-icons horizontal" style="color:#09f; font-size: 48px;">delete</span>
+                            <div class="card-body">
+                              <h5 class="card-title">Desc. Homologada</h5>
+                              <p class="card-text">Material controlado ou ↑ R$5.000,00  </p>
+                              <small class="card-text">Vtr/Eqp entram aqui tb </small>
+                              <a class="btn btn-primary"href="/facil/diexDescargaIndireta.html"><span class="material-icons horizontal">open_in_new</span>Preencher</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 mb-2">
+                        <div class="card" style="width: 14rem;">
+                            <span class="material-icons horizontal" style="color:#09f; font-size: 48px;">devices</span>
+                            <div class="card-body">
+                              <h5 class="card-title">Dispositivos eletrônicos</h5>
+                              <p class="card-text">Apenas classe VII</p>
+                              <small class="card-text">Impressora, PC, Note, TV</small>
+                              <a class="btn btn-primary"href="/facil/diexDescargaClVII.html"><span class="material-icons horizontal">open_in_new</span>Preencher</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row text-center ">
+                    <div class="col mb-2">
+                        <a class="btn btn-primary"href="http://www.sef.eb.mil.br/images/a2/assessoria2/2021/port_1555_cex_rae.pdf" target="_blank" style="width: 120px;"><span class="material-icons horizontal">picture_as_pdf</span>RAE</a>
+                        <a class="btn btn-primary"href="http://www.1rm.eb.mil.br/images/imagens/documentos/EscLog/narmnt.pdf" target="_blank"><i class="material-icons horizontal">picture_as_pdf</i>NARMNT</a>
+                    </div>
+                </div>
+              </div>
+              <div id="PA" class="tabcontent">
+                <h3 class="display-4 mb-4">Processo Administrativo</h3>
+                <center><img class="text-center" src="assets/img/const.webp" width="300px" alt="">
+                    <p>PROGRAMANDO FORMULÁRIO....😔</p><p>Zzz...</p></center>
+              </div>
+              <div id="Default" class="tabcontent">
+                <h3 class="text-left mb-2 display-4">Facilitadores burocráticos</h3>
+                <p class="text-left">Selecione a partir do menu lateral um dos processos administrativos. <br>Cada processo foi pragmaticamente formatado segundo os manuais vigentes.<br> Para maiores informações consulte:</p>
+                <p class="text-left"><a href="http://10.56.160.77/fiscalizacao.php?IDMenu=51" target="_blank">Intranet - Fiscalização</a></p>
+                <p class="text-left"><a href="http://intranet.dmat.eb.mil.br/" target="_blank">Intranet - D Mat</a></p>
+                <p class="text-left"><a href="http://intranet.3gpte.eb.mil.br/" target="_blank">Intranet - 3º GPT E</a></p>
+                <p class="text-left"><a href="http://10.56.120.22/9gptlog/Documentos/PDR_LOG_2022/ADITAMENTO%20LOG%c3%8dSTICO/Adt%20Log%202022/" target="_blank">Intranet - 9º GPTLOG (Adt. Log. Descarga)</a></p>
+                <p class="text-left"><a href="http://intranet.doc.eb.mil.br/home.php" target="_blank">Intranet - DOC (Aditamentos mat. cl VI)</a></p>
+              </div>
+        </div>
+        </div>
+        <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+        <script>
+            function openMenu(evt, categoria) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+                tablinks[i].className = tablinks[i].className.replace("mx-2",'');
+              }
+
+              document.getElementById(categoria).style.display = "block";
+              evt.currentTarget.className += " active mx-2";
+              
+            }
+            
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+</body>
+<footer class=" text-center text-white" style="background-color:#09f;">
+    <div class="container p-4">
+      <section class="mb-4">
+      </section>
+      <section class="mb-4">
+        <p>
+          9º BEC - Av. Fernando Corrêa da Costa, 2979 - Boa Esperança<br>Cuiabá-MT - CEP: 78070-000<br> Tel. (65) 2121-0355 ou (65) 2121-0354 | Email: <a class="email text-white" href="mailto:clubesargentoscuiaba@gmail.com" target="_self">s1@9bec.eb.mil.br</a>
+        </p>
+      </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2022 | Autor: Luiz Fernando da Mota Carvalho - 3º Sgt </div>
+</footer>
+
+
+</html>
