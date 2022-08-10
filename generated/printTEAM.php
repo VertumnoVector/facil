@@ -70,7 +70,7 @@ $precoUsado = str_replace(',','.',$aux2);
 $pdf = new PDF();
 $pdf->nomeOM = $nomeOM;
 $pdf->desigHistorica = $desigHistorica;
-$pdf->cidade = $ciadade;
+$pdf->cidade = $cidade;
 //inicia footer e header
 $pdf->header = 1;
 $pdf->footer = 0;
@@ -159,7 +159,7 @@ if ($selectDescarga == 'sim') {
 
 
 $data = strftime('%A, %d de %B de %Y', strtotime('today'));
-$pdf->Ln(20);$pdf->setX(0);$pdf->MultiCell(220,5,'Quartel em '.$this->cidade.', '.utf8_encode($data).'.',0,'C',false);
+$pdf->Ln(20);$pdf->setX(0);$pdf->MultiCell(220,5,'Quartel em '.$cidade.', '.utf8_encode($data).'.',0,'C',false);
 $pdf->Ln(20);$pdf->setX(0);$pdf->MultiCell(220,5,$nomePresidente,0,'C',false);
 $pdf->Ln(1);$pdf->setX(0);$pdf->MultiCell(220,5,'Presidente',0,'C',false);
 $pdf->Ln(20);$pdf->setX(0);$pdf->MultiCell(220,5,$nomeMembro1,0,'C',false);

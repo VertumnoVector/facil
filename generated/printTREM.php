@@ -1,5 +1,6 @@
 <?php
 require('../res/fpdf/fpdf.php');
+require('names.php');
 setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 date_default_timezone_set('America/Sao_Paulo');
 
@@ -66,7 +67,7 @@ $pdf = new PDF();
 //inicia footer e header
 $pdf->nomeOM = $nomeOM;
 $pdf->desigHistorica = $desigHistorica;
-$pdf->cidade = $ciadade;
+$pdf->cidade = $cidade;
 
 $pdf->header = 1;
 $pdf->footer = 0;
@@ -171,7 +172,7 @@ if ($selectFavoravel === 'sim'){
 
 
 $data = strftime('%A, %d de %B de %Y', strtotime('today'));
-$pdf->Ln(20);$pdf->setX(0);$pdf->MultiCell(220,5,'Quartel em '.$this->cidade.', '.utf8_encode($data).'.',0,'C',false);
+$pdf->Ln(20);$pdf->setX(0);$pdf->MultiCell(220,5,'Quartel em '.$cidade.', '.utf8_encode($data).'.',0,'C',false);
 $pdf->Ln(20);$pdf->setX(0);$pdf->MultiCell(220,5,$nomePresidente,0,'C',false);
 $pdf->Ln(1);$pdf->setX(0);$pdf->MultiCell(220,5,'Presidente',0,'C',false);
 $pdf->Ln(20);$pdf->setX(0);$pdf->MultiCell(220,5,$nomeMembro1,0,'C',false);
