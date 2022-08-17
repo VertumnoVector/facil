@@ -23,7 +23,7 @@
                 <center><small>O formulário irá gerar um PDF automaticamente</small></center>
             </div>
         </div>
-        <form class=" justify-content-center row g-3 p-2 needs-validation" action="generated/printPT.php" method="post" novalidate>
+        <form class=" justify-content-center row g-3 p-2 needs-validation" action="generated\printPT.php" method="post" novalidate>
             <div class="row">
                 <h2>1. IDENTIFICAÇÃO DO MILITAR</h2>
                 <div class="col-md-8 mb-3">
@@ -73,7 +73,7 @@
                 <div class="col-lg mb-3">
                     
                     <h2 class="mt-5">2. IDENTIFICAÇÃO DO MATERIAL</h2>
-                    <span class="alert alert-info d-block"><img src="assets/img/caverna.PNG" width="100" alt="" style="display: flex;"><b>ORIENTAÇÃO</b><br>Toda descrição de material deve estar presente na Nota de BI ou no DIEx de Descarga<br></span>
+                    <span class="alert alert-info d-block"><img src="/assets/img/caverna.PNG" width="100" alt="" style="display: flex;"><b>ORIENTAÇÃO</b><br>Toda descrição de material deve estar presente na Nota de BI ou no DIEx de Descarga<br></span>
                     <label for="selectDependencia" class="form-label">A qual reserva de material pertence o item em
                         avaliação?</label>
                     <select class="form-select" required aria-label="selectDependencia" name="selectDependencia">
@@ -145,7 +145,7 @@
             <div class="row">
                 <h2 class="mt-5">4. CUSTOS COM MANUTENÇÃO </h2>
                 <h4>(Vai precisar consertar o que?)</h4>
-                <span class="alert alert-info "><img src="assets/img/caverna.PNG" width="100" alt="" style="display: flex;"><b>ORIENTAÇÃO</b><br>O <b>botão verde</b> abre uma lista que possui alguns motivos padronizados, pode escolher quantos forem necessários;<br>O <b>botão azul</b> abre uma caixa de texto onde será o senhor deverá descrever as necessidades de manutenção;<br>Pode combinar as duas opções também.</span>
+                <span class="alert alert-info "><img src="/assets/img/caverna.PNG" width="100" alt="" style="display: flex;"><b>ORIENTAÇÃO</b><br>O <b>botão verde</b> abre uma lista que possui alguns motivos padronizados, pode escolher quantos forem necessários;<br>O <b>botão azul</b> abre uma caixa de texto onde será o senhor deverá descrever as necessidades de manutenção;<br>Pode combinar as duas opções também.</span>
             </div>
             <div class="row">
                 <div class="col-md-9 mb-3">
@@ -291,10 +291,10 @@
                 `<select id='motivo`+size+`'name='motivo`+size+`' class="form-select mb-2" required aria-label="selectCusto">
                         <option value="" disabled selected>Selecione...</option>
                         <optgroup label="Classe II - Intendência">
-                            <option value="Necessidade do serviço de recuperação nas armações de aço.<br><br>Necessidade do serviço de recuperação completa das portas e dobradiças de metal<br><br>Necessidade de substituição das placas de metal da composição do armário.">Armarios Verde-Oliva</option>
+                            <option value="Necessidade do serviço de recuperação nas armações de aço.Necessidade do serviço de recuperação completa das portas e dobradiças de metal. Necessidade de substituição das placas de metal da composição do armário.">Armarios Verde-Oliva</option>
                             <option value="Necessidade do serviço de recuperação completa da tapeçaria dos colchões.">Colchões de espuma</option>
-                            <option value="Necessidade do serviço de recuperação completa das astes de metal<br><br>Necessidade do serviço de recuperação completa das lonas da barraca<br><br>Necessidade do serviço de recuperação dos ilhoses.">Barraca de Campanha</option>
-                            <option value="Necessidade de recuperação da tampa da termo box.<br><br>Necessidade de recuperar e reparar a estrutura física interna.<br><br>Necessidade de substituição das travas de metal da tampa da termo box.">Termo Box Verde-Oliva</option>
+                            <option value="Necessidade do serviço de recuperação completa das astes de metal. Necessidade do serviço de recuperação completa das lonas da barraca. Necessidade do serviço de recuperação dos ilhoses.">Barraca de Campanha</option>
+                            <option value="Necessidade de recuperação da tampa da termo box.Necessidade de recuperar e reparar a estrutura física interna. Necessidade de substituição das travas de metal da tampa da termo box.">Termo Box Verde-Oliva</option>
                         </optgroup>
                         <optgroup label="Classe V - Armamentos">
                             <option value=""disabled>Pistola Beretta 9mm - </option>

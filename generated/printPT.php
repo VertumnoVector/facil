@@ -1,5 +1,6 @@
 <?php
-require('../res/fpdf/fpdf.php');
+$path = $_SERVER['DOCUMENT_ROOT'].'\facil\\';
+require($path.'res\fpdf\fpdf.php');
 require('names.php');
 setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 date_default_timezone_set('America/Sao_Paulo');
@@ -8,7 +9,7 @@ class PDF extends FPDF{
     function Header(){
         if ($this->header == 1 ) {
             // Logo
-            $this->Image('../assets/img/logo.png',95,6,20);
+            $this->Image($this->path.'/assets/img/logo.png',95,6,20);
             $this->SetFont('Calibri Bold',"",12);
             // Move to the right
             $this->setY(25);
@@ -64,6 +65,7 @@ $flagAssessor = $_POST['checkAssessor'];
 
 //novo objeto do tipo PDF
 $pdf = new PDF();
+$pdf->path = $_SERVER['DOCUMENT_ROOT'].'\facil\\';
 $pdf->nomeOM = $nomeOM;
 $pdf->desigHistorica = $desigHistorica;
 $pdf->cidade = $cidade;
