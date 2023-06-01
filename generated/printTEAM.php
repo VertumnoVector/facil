@@ -103,7 +103,7 @@ if ($qtdMaterial == 1){
     $pdf->Ln(10);
 } else if ($qtdMaterial > 1) {
     for ($i=1; $i <= $qtdMaterial; $i++) { 
-        $pdf->Ln(10);$pdf->setFont('Calibri',"",12);$pdf->setX(30);$pdf->MultiCell(150,5,'Patrimonio Nr: 1004101000'.$_POST['inputPatrimonio'.$i].' Data de inclusão em carga: '.$_POST['inputInclusaoValor'.$i].' DESCRIÇÃO: '.$_POST['inputDescricao'.$i].'Valor de inclusão em carga em R$: '.$_POST['inputInclusaoValor'.$i].'.',0,'J',false);
+        $pdf->Ln(10);$pdf->setFont('Calibri',"",12);$pdf->setX(30);$pdf->MultiCell(150,5,'Patrimonio Nr: 1004101000'.$_POST['inputPatrimonio'.$i].' Data de inclusão em carga: '.$_POST['inputInclusaoData'.$i].' DESCRIÇÃO: '.$_POST['inputDescricao'.$i].'Valor de inclusão em carga em R$: '.$_POST['inputInclusaoValor'.$i].'.',0,'J',false);
         
     }
     $pdf->Ln(10);  

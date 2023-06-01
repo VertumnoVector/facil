@@ -2,6 +2,7 @@
 $path = $_SERVER['DOCUMENT_ROOT'].'\facil\\';
 
 require($path.'res\fpdf\fpdf.php');
+require('names.php');
 setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 date_default_timezone_set('America/Sao_Paulo');
 

@@ -47,7 +47,7 @@ $dependencia = $_POST['selectDependencia'];
 $patrimonio = $_POST['inputPatrimonio'];
 $descricao = $_POST['inputDescricao'];
 $valorEntrada = $_POST['inputInclusaoValor'];
-$dataInclusao = strftime('%d de %B de %Y', strtotime($_POST['inputInclusaoData']));
+$dataInclusao = strftime('%d de %B de %Y', strtotime(str_replace("/","-",$_POST['inputInclusaoData'])));
 $dataNomeacao = $_POST['inputDataNomeacao'];
 
 $estadoGeral = $_POST['inputEstadoGeral'];
@@ -90,7 +90,8 @@ $pdf->setXY(20,90);$pdf->MultiCell(150,5,'2. MATERIAL PERTENCENTE À CARGA DA: '
 //EXAME DO MATERIAL
 $pdf->Text(20,110,"3. EXAME DO MATERIAL");
 $pdf->Text(30,120,"a. Identificação do material");
-$pdf->setFont('Calibri',"",12);$pdf->setXY(30,130);$pdf->MultiCell(150,5,'Patrimonio Nr: 1004101000'.$patrimonio.' Data de inclusão em carga: '.$dataInclusao.' DESCRIÇÃO: '.$descricao.'Valor de inclusão em carga em R$: '.$valorEntrada,0,'J',false);
+//$pdf->setFont('Calibri',"",12);$pdf->setXY(30,130);$pdf->MultiCell(150,5,'Patrimonio Nr: 1004101000'.$patrimonio.' Data de inclusão em carga: '.$dataInclusao.' DESCRIÇÃO: '.$descricao.'Valor de inclusão em carga em R$: '.$valorEntrada,0,'J',false);
+$pdf->setFont('Calibri',"",12);$pdf->setXY(30,130);$pdf->MultiCell(150,5,'Patrimonio Nr: '.$patrimonio.' Data de inclusão em carga: '.$dataInclusao.' DESCRIÇÃO: '.$descricao.'Valor de inclusão em carga em R$: '.$valorEntrada,0,'J',false);
 $pdf->setFont('Calibri Bold',"",12);$pdf->setXY(30,155);$pdf->MultiCell(150,5,"b. Estado geral");
 $pdf->setFont('Calibri',"",12);$pdf->setXY(30,165);$pdf->MultiCell(150,5,$estadoGeral,0,'J',false);
 $pdf->Ln(10);
@@ -114,8 +115,15 @@ $pdf->Ln(5);$pdf->setX(30);$pdf->MultiCell(150,5,'O valor total estimado da manu
 $pdf->setFont('Calibri Bold',"",12);$pdf->Ln(5);$pdf->setX(20);$pdf->MultiCell(150,5,'5. CONCLUSÃO',0,'J',false);
 if ($selectDescarga == 'sim') {
     $pdf->setFont('Calibri',"",12);
-    $pdf->Ln(10);$pdf->setX(30);$pdf->MultiCell(150,5,'O material avaliado ('.$descricao.') deve ser descarregado tendo em vista os seguintes motivos:',0,'J',false);
     $pdf->Ln(10);$pdf->setX(30);$pdf->MultiCell(150,5,'O valor de mercado de um ativo similar a este, usado e em boas condições, é de R$ '.$_POST['inputPrecoUsado'].';',0,'L',false);
+    $pdf->Ln(10);$pdf->setX(30);$pdf->MultiCell(150,5,'O material avaliado ('.$descricao.') deve ser descarregado tendo em vista os seguintes motivos:',0,'J',false);
+   
+    if (str_replace(',','.',$_POST['inputPrecoUsado']) == 0.00){
+        $pdf->Ln(10);$pdf->setX(30);$pdf->MultiCell(150,5,'Não existe possibilidade de manutenção local para material fornecido pelo OP',0,'L',false);
+    } else {
+        
+    }
+    
 
     $count_indisp = 0;
 
@@ -124,12 +132,13 @@ if ($selectDescarga == 'sim') {
         $pdf->Ln(10);$pdf->setX(30);$pdf->MultiCell(150,5,$count_indisp.'. A recuperação é antieconômica, pois o custo da manutenção (peças e serviços) ultrapassa 60% do valor real como material novo;',0,'FJ',false);
     }
 
-    if ($custoManutencao >= $precoUsado*0.6){
+    if (str_replace(',','.',$custoManutencao) > str_replace(',','.',$precoUsado)*0.6){
         $count_indisp +=1;
         $pdf->Ln(10);$pdf->setX(30);$pdf->MultiCell(150,5,$count_indisp.'. A recuperação é antieconômica, pois o custo da manutenção (peças e serviços) ultrapassa o seu valor real como material usado;',0,'FJ',false);
     }
     $count_indisp +=1;
-    $pdf->Ln(10);$pdf->setX(30);$pdf->MultiCell(150,5,$count_indisp.'. A viatura foi utilizada em condições severas nas diversas obras do 9º BEC, acelerando assim o desgaste de alguns componentes.',0,'FJ',false);
+    //$pdf->Ln(10);$pdf->setX(30);$pdf->MultiCell(150,5,$count_indisp.'. A viatura foi utilizada em condições severas nas diversas obras do 9º BEC, acelerando assim o desgaste de alguns componentes.',0,'FJ',false);
+    $pdf->Ln(10);$pdf->setX(30);$pdf->MultiCell(150,5,$count_indisp.'. O Material foi utilizado em condições severas, acelerando assim o desgaste.',0,'FJ',false);
 } else {
     $pdf->setFont('Calibri',"",12);
     $pdf->Ln(10);$pdf->setX(30);$pdf->MultiCell(150,5,'O material avaliado ('.$descricao.') não deve ser descarregado tendo em vista os seguintes motivos:',0,'J',false);
